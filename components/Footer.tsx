@@ -1,0 +1,160 @@
+'use client';
+
+import Link from 'next/link';
+
+export default function Footer() {
+  return (
+    <footer className="w-full bg-black text-gray-100 py-12 md:py-16">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+          {/* About */}
+          <div>
+            <h5 className="text-white font-bold mb-4">About D&L Furnitures</h5>
+            <p className="text-sm leading-relaxed mb-4">
+              D&L Furnitures brings you premium, solid wood furniture that
+              combines tradition with contemporary design.
+            </p>
+            <p className="text-xs text-gray-400">
+             © 2024 D&L Furnitures. All rights reserved.
+            </p>
+          </div>
+
+          {/* Categories */}
+          <div>
+            <h5 className="text-white font-bold mb-4">Categories</h5>
+            <ul className="text-sm space-y-2">
+              <li>
+                <a href="#" className="hover:text-yellow-500 transition">
+                  Sofas & Seating
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-yellow-500 transition">
+                  Beds & Mattresses
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-yellow-500 transition">
+                  Dining Sets
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-yellow-500 transition">
+                  Storage & Cabinets
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-yellow-500 transition">
+                  Office Furniture
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Customer Service */}
+          <div>
+            <h5 className="text-white font-bold mb-4">Customer Service</h5>
+            <ul className="text-sm space-y-2">
+              <li>
+                <a href="#" className="hover:text-yellow-500 transition">
+                  Contact Us
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-yellow-500 transition">
+                  Shipping Info
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-yellow-500 transition">
+                  Returns & Exchange
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-yellow-500 transition">
+                  FAQ
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-yellow-500 transition">
+                  Size Guide
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Social & Newsletter */}
+          <div>
+            <h5 className="text-white font-bold mb-4">Connect With Us</h5>
+            <div className="flex gap-3 mb-6">
+              <a
+                href="#"
+                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-600 transition"
+              >
+                f
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-600 transition"
+              >
+                🐦
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-600 transition"
+              >
+                📷
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-600 transition"
+              >
+                in
+              </a>
+            </div>
+            <div className="text-sm">
+              <p className="mb-2 font-semibold text-white">Newsletter Signup</p>
+              <input
+                type="email"
+                placeholder="Your email"
+                className="w-full px-3 py-2 bg-gray-800 rounded text-sm text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-600 mb-2"
+              />
+              <button className="w-full bg-yellow-600 text-black py-2 rounded font-semibold hover:bg-yellow-700 transition">
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Footer Bottom */}
+        <div className="border-t border-gray-800 pt-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-400 mb-6">
+            <p>
+              D&L Furnitures © 2024. All rights reserved. | Handcrafted
+              with ❤️ in India
+            </p>
+            <div className="flex gap-6">
+              <a href="#" className="hover:text-gray-300 transition">
+                Privacy Policy
+              </a>
+              <a href="#" className="hover:text-gray-300 transition">
+                Terms & Conditions
+              </a>
+              <a href="#" className="hover:text-gray-300 transition">
+                Sitemap
+              </a>
+            </div>
+          </div>
+          <div className="flex justify-center">
+            <Link
+              href="/admin/dashboard"
+              className="px-4 py-2 bg-yellow-600 text-black text-sm font-semibold rounded hover:bg-yellow-700 transition"
+            >
+              Admin Dashboard
+            </Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
