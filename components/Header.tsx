@@ -420,28 +420,35 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-        <nav className="md:hidden flex flex-col gap-4 mt-4 p-4 bg-neutral-900 border-t border-neutral-800 text-gray-300 font-medium text-sm">
+        <nav className="md:hidden flex flex-col gap-3 mt-4 p-4 bg-neutral-900 border-t border-neutral-800 text-gray-300 font-medium text-sm max-h-[calc(100vh-120px)] overflow-y-auto">
           {/* Mobile About Us Link */}
           <Link
             href="/about"
             onClick={closeMegaMenu}
-            className="px-4 py-2 bg-yellow-600 text-neutral-950 font-semibold rounded-lg hover:bg-yellow-700 transition text-center"
+            className="px-4 py-2 bg-yellow-600 text-neutral-950 font-semibold rounded-lg hover:bg-yellow-700 transition text-center w-full"
           >
             About Us
           </Link>
 
           {/* Categories */}
           {categories.map((cat) => (
-            <div key={cat.slug} className="relative">
+            <div key={cat.slug} className="border-b border-neutral-800 pb-3">
               <button
                 onClick={() =>
                   setActiveMenu(activeMenu === cat.slug ? null : cat.slug)
                 }
-                className="whitespace-nowrap hover:text-yellow-600 flex items-center gap-1"
+                className="w-full text-left hover:text-yellow-600 flex items-center justify-between gap-3 py-2"
               >
-                {cat.name}
+                <div className="flex items-center gap-3 flex-1">
+                  <img 
+                    src={cat.image} 
+                    alt={cat.name}
+                    className="w-12 h-12 object-cover rounded border border-neutral-700"
+                  />
+                  <span className="font-semibold">{cat.name}</span>
+                </div>
                 <svg
-                  className={`w-3 h-3 transition-transform ${
+                  className={`w-4 h-4 transition-transform flex-shrink-0 ${
                     activeMenu === cat.slug ? 'rotate-180' : ''
                   }`}
                   fill="none"
@@ -459,21 +466,28 @@ export default function Header() {
 
               {/* Mobile submenu */}
               {activeMenu === cat.slug && (
-                <div className="absolute top-full left-0 bg-neutral-900 border border-neutral-800 rounded-lg shadow-xl shadow-black/50 p-4 mt-2 w-48 z-50">
+                <div className="bg-neutral-800 rounded-lg p-3 mt-2 mb-4">
+                  {/* Category Image Preview */}
+                  <img 
+                    src={cat.image} 
+                    alt={cat.name}
+                    className="w-full h-40 object-cover rounded-lg mb-4 border border-neutral-700"
+                  />
+                  
                   {cat.subCategories.map((subCat, idx) => (
-                    <div key={idx} className="mb-4">
-                      <p className="font-semibold text-white text-xs mb-2">
+                    <div key={idx} className="mb-4 pb-3 border-b border-neutral-700 last:border-b-0">
+                      <p className="font-semibold text-yellow-500 text-sm mb-2">
                         {subCat.name}
                       </p>
-                      <ul className="space-y-1">
+                      <ul className="space-y-1.5">
                         {subCat.items.map((item, itemIdx) => (
                           <li key={itemIdx}>
                             <Link
                               href={`/product/${item.toLowerCase().replace(/\s+/g, '-')}`}
                               onClick={closeMegaMenu}
-                              className="text-gray-400 text-xs hover:text-yellow-600 block"
+                              className="text-gray-300 text-xs hover:text-yellow-400 block pl-3 py-1"
                             >
-                              {item}
+                              • {item}
                             </Link>
                           </li>
                         ))}
