@@ -1,3 +1,7 @@
+'use client';
+
+import { FaUser, FaFemale, FaStar } from 'react-icons/fa';
+
 export default function Testimonials() {
   const testimonials = [
     {
@@ -5,21 +9,21 @@ export default function Testimonials() {
       city: 'Mumbai',
       rating: 5,
       text: 'Amazing quality furniture! My entire living room is from D&L Furnitures. Highly recommended!',
-      image: '👨',
+      icon: FaUser,
     },
     {
       name: 'Priya Singh',
       city: 'Delhi',
       rating: 5,
       text: 'The craftsmanship is outstanding. Delivery was quick and furniture arrived in perfect condition.',
-      image: '👩',
+      icon: FaFemale,
     },
     {
       name: 'Vikram Patel',
       city: 'Bangalore',
       rating: 5,
       text: 'Best investment for my home. The durability and design are unmatched at this price point.',
-      image: '👨',
+      icon: FaUser,
     },
   ];
 
@@ -36,13 +40,17 @@ export default function Testimonials() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, idx) => (
+          {testimonials.map((testimonial, idx) => {
+            const IconComponent = testimonial.icon;
+            return (
             <div
               key={idx}
               className="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition duration-300"
             >
               <div className="flex items-center gap-4 mb-4">
-                <div className="text-4xl">{testimonial.image}</div>
+                <div className="text-4xl text-yellow-600">
+                  <IconComponent size={32} />
+                </div>
                 <div>
                   <h3 className="font-bold text-gray-900">{testimonial.name}</h3>
                   <p className="text-gray-600 text-sm">{testimonial.city}</p>
@@ -50,14 +58,15 @@ export default function Testimonials() {
               </div>
               <div className="flex gap-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <span key={i} className="text-yellow-400 text-lg">
-                    ⭐
+                  <span key={i} className="text-yellow-400">
+                    <FaStar size={16} />
                   </span>
                 ))}
               </div>
               <p className="text-gray-600 leading-relaxed">"{testimonial.text}"</p>
             </div>
-          ))}
+          );
+          })}
         </div>
       </div>
     </section>

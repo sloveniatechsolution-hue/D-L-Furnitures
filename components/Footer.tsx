@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaHeart } from 'react-icons/fa';
 
 export default function Footer() {
   return (
@@ -89,27 +90,31 @@ export default function Footer() {
             <div className="flex gap-3 mb-6">
               <a
                 href="#"
-                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-600 transition"
+                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-600 transition text-white"
+                title="Facebook"
               >
-                f
+                <FaFacebook size={18} />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-600 transition"
+                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-600 transition text-white"
+                title="Twitter"
               >
-                🐦
+                <FaTwitter size={18} />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-600 transition"
+                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-600 transition text-white"
+                title="Instagram"
               >
-                📷
+                <FaInstagram size={18} />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-600 transition"
+                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-yellow-600 transition text-white"
+                title="LinkedIn"
               >
-                in
+                <FaLinkedin size={18} />
               </a>
             </div>
             <div className="text-sm">
@@ -129,9 +134,9 @@ export default function Footer() {
         {/* Footer Bottom */}
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-400 mb-6">
-            <p>
+            <p className="flex items-center justify-center gap-1">
               D&L Furnitures © 2024. All rights reserved. | Handcrafted
-              with ❤️ in India
+              with <FaHeart size={14} className="text-red-500" /> in India
             </p>
             <div className="flex gap-6">
               <a href="#" className="hover:text-gray-300 transition">

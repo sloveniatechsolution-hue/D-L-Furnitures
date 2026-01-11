@@ -3,6 +3,8 @@
 import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { GiToolbox, GiEarthAmerica, FaHeart } from 'react-icons/gi';
+import { FaHeart as FaHeartFA } from 'react-icons/fa';
 
 export default function AboutPage() {
   return (
@@ -10,7 +12,7 @@ export default function AboutPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="w-full bg-gradient-to-r from-neutral-950 to-neutral-900 py-16">
+      <section className="w-full bg-gradient-to-r from-neutral-950 to-neutral-900 py-16 pt-24">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h1 className="text-5xl font-bold text-yellow-500 mb-4">About D&L Furnitures</h1>
           <p className="text-lg text-neutral-300 max-w-2xl mx-auto">
@@ -90,7 +92,9 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Value 1 */}
             <div className="text-center p-8 rounded-lg bg-neutral-900 hover:shadow-lg transition">
-              <div className="text-5xl mb-4">🛠️</div>
+              <div className="text-5xl mb-4 text-yellow-500">
+                <GiToolbox size={50} className="mx-auto" />
+              </div>
               <h3 className="text-2xl font-bold text-yellow-500 mb-4">Craftsmanship</h3>
               <p className="text-neutral-400">
                 Every piece is crafted with meticulous attention to detail, ensuring superior quality and durability that stands the test of time.
@@ -99,7 +103,9 @@ export default function AboutPage() {
 
             {/* Value 2 */}
             <div className="text-center p-8 rounded-lg bg-neutral-900 hover:shadow-lg transition">
-              <div className="text-5xl mb-4">♻️</div>
+              <div className="text-5xl mb-4 text-yellow-500">
+                <GiEarthAmerica size={50} className="mx-auto" />
+              </div>
               <h3 className="text-2xl font-bold text-yellow-500 mb-4">Sustainability</h3>
               <p className="text-neutral-400">
                 We are committed to using sustainable materials and eco-friendly practices to protect our environment for future generations.
@@ -108,7 +114,9 @@ export default function AboutPage() {
 
             {/* Value 3 */}
             <div className="text-center p-8 rounded-lg bg-neutral-900 hover:shadow-lg transition">
-              <div className="text-5xl mb-4">💖</div>
+              <div className="text-5xl mb-4 text-yellow-500">
+                <FaHeartFA size={50} className="mx-auto" />
+              </div>
               <h3 className="text-2xl font-bold text-yellow-500 mb-4">Customer First</h3>
               <p className="text-neutral-400">
                 Our customers are at the heart of everything we do. Their satisfaction and trust are the measures of our success.

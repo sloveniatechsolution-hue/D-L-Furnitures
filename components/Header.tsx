@@ -12,6 +12,7 @@ export default function Header() {
   const [cartCount, setCartCount] = useState(0);
   const [wishlistCount, setWishlistCount] = useState(0);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
   // Close menu when clicking outside and update counts
@@ -50,6 +51,7 @@ export default function Header() {
 
   const closeMegaMenu = () => {
     setActiveMenu(null);
+    setMobileMenuOpen(false);
   };
 
   const categories = [
@@ -223,8 +225,8 @@ export default function Header() {
   ];
 
   return (
-    <header className="w-full bg-neutral-950 border-b border-neutral-800 fixed top-0 z-40" ref={menuRef}>
-      <div className="max-w-7xl mx-auto px-4 py-3 md:py-3">
+    <header className="w-full bg-neutral-950 border-b border-neutral-800 fixed top-0 z-40 left-0 right-0" ref={menuRef}>
+      <div className="max-w-7xl mx-auto px-4 py-2 md:py-3">
         {/* Logo & Navigation Row */}
         <div className="flex items-center justify-between">
           {/* Logo & Branding */}
@@ -324,10 +326,21 @@ export default function Header() {
           <Link
             href="/about"
             onClick={closeMegaMenu}
-            className="hidden sm:block px-6 py-2 mx-4 bg-gradient-to-r from-yellow-600 to-yellow-500 text-neutral-950 font-semibold rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300"
+            className="hidden md:block px-4 lg:px-6 py-2 bg-yellow-600 text-neutral-950 font-semibold rounded-lg hover:bg-yellow-700 transition-all duration-300"
           >
             About Us
           </Link>
+
+          {/* Mobile Menu Toggle */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden p-2 text-white hover:bg-neutral-800 rounded-lg"
+            title="Menu"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={mobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
+            </svg>
+          </button>
 
           {/* Search & Icons */}
           <div className="flex items-center gap-4">
@@ -406,7 +419,18 @@ export default function Header() {
         </div>
 
         {/* Mobile Menu */}
-        <nav className="md:hidden flex items-center gap-4 mt-4 text-gray-300 font-medium text-xs overflow-x-auto pb-2">
+        {mobileMenuOpen && (
+        <nav className="md:hidden flex flex-col gap-4 mt-4 p-4 bg-neutral-900 border-t border-neutral-800 text-gray-300 font-medium text-sm">
+          {/* Mobile About Us Link */}
+          <Link
+            href="/about"
+            onClick={closeMegaMenu}
+            className="px-4 py-2 bg-yellow-600 text-neutral-950 font-semibold rounded-lg hover:bg-yellow-700 transition text-center"
+          >
+            About Us
+          </Link>
+
+          {/* Categories */}
           {categories.map((cat) => (
             <div key={cat.slug} className="relative">
               <button
@@ -461,6 +485,7 @@ export default function Header() {
             </div>
           ))}
         </nav>
+        )}
       </div>
     </header>
   );

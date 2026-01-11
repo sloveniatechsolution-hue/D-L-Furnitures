@@ -1,32 +1,36 @@
+'use client';
+
+import { MdCheck, MdLocalShipping, MdAttachMoney, MdShield, MdPalette, MdSupportAgent } from 'react-icons/md';
+
 export default function WhyChooseUs() {
   const reasons = [
     {
-      icon: '✓',
+      icon: MdCheck,
       title: 'Premium Quality',
       description: 'Solid wood furniture built to last for generations',
     },
     {
-      icon: '🚚',
+      icon: MdLocalShipping,
       title: 'Free Delivery',
       description: 'Complimentary delivery on orders above ₹50,000',
     },
     {
-      icon: '💰',
+      icon: MdAttachMoney,
       title: 'Best Prices',
       description: 'Unbeatable prices without compromising quality',
     },
     {
-      icon: '🛡️',
+      icon: MdShield,
       title: '2-Year Warranty',
       description: 'Complete warranty coverage on all furniture',
     },
     {
-      icon: '🎨',
+      icon: MdPalette,
       title: 'Custom Design',
       description: 'Customize furniture to match your style',
     },
     {
-      icon: '⭐',
+      icon: MdSupportAgent,
       title: 'Expert Support',
       description: '24/7 customer support for all your needs',
     },
@@ -45,10 +49,12 @@ export default function WhyChooseUs() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {reasons.map((reason, idx) => (
+          {reasons.map((reason, idx) => {
+            const IconComponent = reason.icon;
+            return (
             <div key={idx} className="flex gap-4">
-              <div className="text-4xl font-bold text-yellow-600 flex-shrink-0">
-                {reason.icon}
+              <div className="text-4xl text-yellow-600 flex-shrink-0">
+                <IconComponent size={40} />
               </div>
               <div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">
@@ -57,7 +63,8 @@ export default function WhyChooseUs() {
                 <p className="text-gray-600">{reason.description}</p>
               </div>
             </div>
-          ))}
+          );
+          })}
         </div>
       </div>
     </section>

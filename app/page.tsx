@@ -73,7 +73,7 @@ export default function Home() {
       <Header />
 
       {/* Hero Banner Section - Add top padding for fixed header */}
-      <div>
+      <div className="pt-20">
         <HeroBanner />
       </div>
 
