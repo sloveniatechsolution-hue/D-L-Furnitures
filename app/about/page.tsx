@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { GiToolbox, GiEarthAmerica, FaHeart } from 'react-icons/gi';
+import { GiToolbox, GiEarthAmerica } from 'react-icons/gi';
 import { FaHeart as FaHeartFA } from 'react-icons/fa';
 
 export default function AboutPage() {
