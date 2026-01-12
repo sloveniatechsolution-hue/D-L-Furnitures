@@ -226,32 +226,32 @@ export default function Header() {
 
   return (
     <header className="w-full bg-neutral-950 border-b border-neutral-800 fixed top-0 z-40 left-0 right-0" ref={menuRef}>
-      <div className="max-w-7xl mx-auto px-4 py-2 md:py-3">
+      <div className="max-w-full px-6 md:px-8 py-2 md:py-3">
         {/* Logo & Navigation Row */}
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between gap-8">
           {/* Logo & Branding */}
           <Link href="/" onClick={closeMegaMenu} className="flex items-center gap-3 hover:opacity-80 transition">
-            <div className="relative w-16 h-16 flex-shrink-0">
+            <div className="relative w-24 h-24 flex-shrink-0">
               <Image
-                 src="/logo.jpg"
-                 alt="D&L Furnitures Logo"
-                 fill
-                 sizes="(max-width: 768px) 60px, 64px"
-                 className="object-contain"
-               />
-            </div>
-            <div className="hidden sm:block">
-              <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-yellow-600 via-yellow-500 to-yellow-400 bg-clip-text text-transparent leading-none">
-                D&L
-              </h1>
-              <p className="text-xs md:text-sm font-semibold text-yellow-500 mt-1">
-                FURNITURES
-              </p>
-            </div>
-          </Link>
+                  src="/logo.jpg"
+                  alt="D&L Furnitech Logo"
+                  fill
+                  sizes="(max-width: 768px) 90px, 96px"
+                  className="object-contain"
+                />
+             </div>
+             <div className="hidden sm:block">
+               <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-yellow-600 via-yellow-500 to-yellow-400 bg-clip-text text-transparent leading-none">
+                 D&L
+               </h1>
+               <p className="text-xs md:text-sm font-semibold text-yellow-500 mt-1">
+                 FURNITECH
+               </p>
+             </div>
+           </Link>
 
           {/* Navigation Menu - Hidden on mobile */}
-          <nav className="hidden md:flex items-center gap-8 text-gray-300 font-medium text-sm relative z-40">
+          <nav className="hidden lg:flex items-center gap-6 text-gray-300 font-medium text-sm relative z-40 flex-1">
             {categories.map((cat) => (
               <div key={cat.slug} className="relative group">
                 <button
@@ -322,14 +322,23 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* About Us Button */}
-          <Link
-            href="/about"
-            onClick={closeMegaMenu}
-            className="hidden md:block px-4 lg:px-6 py-2 bg-yellow-600 text-neutral-950 font-semibold rounded-lg hover:bg-yellow-700 transition-all duration-300"
-          >
-            About Us
-          </Link>
+          {/* About Us & Contact Us Buttons */}
+          <div className="hidden lg:flex items-center gap-3 ml-auto">
+            <Link
+              href="/about"
+              onClick={closeMegaMenu}
+              className="px-6 py-2.5 bg-gradient-to-b from-yellow-500 to-yellow-700 text-black font-bold rounded-lg hover:from-yellow-400 hover:to-yellow-600 transition-all duration-300 whitespace-nowrap shadow-lg hover:shadow-xl hover:scale-105"
+            >
+              About Us
+            </Link>
+            <Link
+              href="/contact"
+              onClick={closeMegaMenu}
+              className="px-6 py-2.5 bg-gradient-to-b from-yellow-500 to-yellow-700 text-black font-bold rounded-lg hover:from-yellow-400 hover:to-yellow-600 transition-all duration-300 whitespace-nowrap shadow-lg hover:shadow-xl hover:scale-105"
+            >
+              Contact Us
+            </Link>
+          </div>
 
           {/* Mobile Menu Toggle */}
           <button
@@ -351,7 +360,7 @@ export default function Header() {
                 placeholder="Search furniture..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="bg-transparent outline-none text-sm w-full text-white placeholder-gray-500 font-medium"
+                className="bg-transparent outline-none text-sm w-full text-white placeholder-gray-300 font-medium"
               />
               <button type="submit" className="hover:opacity-70">
                 <svg
@@ -428,6 +437,15 @@ export default function Header() {
             className="px-4 py-2 bg-yellow-600 text-neutral-950 font-semibold rounded-lg hover:bg-yellow-700 transition text-center w-full"
           >
             About Us
+          </Link>
+
+          {/* Mobile Contact Us Link */}
+          <Link
+            href="/contact"
+            onClick={closeMegaMenu}
+            className="px-4 py-2 bg-yellow-600 text-neutral-950 font-semibold rounded-lg hover:bg-yellow-700 transition text-center w-full"
+          >
+            Contact Us
           </Link>
 
           {/* Categories */}

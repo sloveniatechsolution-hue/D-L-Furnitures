@@ -15,26 +15,26 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "D&L Furnitures - Buy Premium Solid Wood Furniture Online in India",
+  title: "D&L Furnitech - Buy Premium Solid Wood Furniture Online in India",
   description: siteConfig.description,
   keywords: siteConfig.keywords,
-  authors: [{ name: "D&L Furnitures" }],
-  creator: "D&L Furnitures",
-  publisher: "D&L Furnitures",
+  authors: [{ name: "D&L Furnitech" }],
+  creator: "D&L Furnitech",
+  publisher: "D&L Furnitech",
   robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
   openGraph: {
     type: "website",
     locale: "en_IN",
     url: siteConfig.siteUrl,
     siteName: siteConfig.name,
-    title: "D&L Furnitures - Premium Solid Wood Furniture Online",
+    title: "D&L Furnitech - Premium Solid Wood Furniture Online",
     description: siteConfig.description,
     images: [
       {
         url: `${siteConfig.siteUrl}/hero.png`,
         width: 1200,
         height: 600,
-        alt: "D&L Furnitures - Premium Wooden Furniture",
+        alt: "D&L Furnitech - Premium Wooden Furniture",
         type: "image/png",
       },
     ],
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: siteConfig.socialMedia.twitter,
     creator: siteConfig.socialMedia.twitter,
-    title: "D&L Furnitures - Premium Wooden Furniture Online",
+    title: "D&L Furnitech - Premium Wooden Furniture Online",
     description: siteConfig.description,
     images: [`${siteConfig.siteUrl}/hero.png`],
   },

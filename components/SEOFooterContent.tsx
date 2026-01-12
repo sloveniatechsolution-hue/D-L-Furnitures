@@ -5,20 +5,20 @@ export default function SEOFooterContent() {
         {/* Main Heading */}
         <div className="mb-12">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            Buy Solid Wood Furniture Online at D&L Furnitures - Your One-Stop Solution for Quality Home Furniture
+            Buy Solid Wood Furniture Online at D&L Furnitech - Your One-Stop Solution for Quality Home Furniture
           </h2>
           
           <div className="text-gray-700 space-y-4 leading-relaxed">
             <p>
-              Welcome to D&L Furnitures, your trusted destination for premium solid wood furniture online in India. A home is the most cherished place in our lives, and quality furniture brings comfort and elegance to every space. Whether you want to furnish your new home or give your existing decor a complete makeover, D&L Furnitures offers an extensive collection of handcrafted wooden furniture that perfectly blends with your home aesthetics.
+              Welcome to D&L Furnitech, your trusted destination for premium solid wood furniture online in India. A home is the most cherished place in our lives, and quality furniture brings comfort and elegance to every space. Whether you want to furnish your new home or give your existing decor a complete makeover, D&L Furnitech offers an extensive collection of handcrafted wooden furniture that perfectly blends with your home aesthetics.
             </p>
 
             <p>
-              At D&L Furnitures, we specialize in providing a vast range of ready-made and customized solid wood furniture online. Our collection includes premium sofa sets, coffee tables, dining tables, wardrobes, beds, storage cabinets, and much more, all crafted from high-quality materials. Each piece is designed with meticulous attention to detail, ensuring that you get furniture that combines functionality, durability, and aesthetic appeal.
+              At D&L Furnitech, we specialize in providing a vast range of ready-made and customized solid wood furniture online. Our collection includes premium sofa sets, coffee tables, dining tables, wardrobes, beds, storage cabinets, and much more, all crafted from high-quality materials. Each piece is designed with meticulous attention to detail, ensuring that you get furniture that combines functionality, durability, and aesthetic appeal.
             </p>
 
             <p>
-              Whether you prefer modern, traditional, contemporary, or industrial styles, D&L Furnitures has something for everyone. Our diverse designs, dimensions, colors, and finish options make us one of India's best online furniture retailers. We understand that every home is unique, which is why we offer customization options to match your specific requirements and preferences.
+              Whether you prefer modern, traditional, contemporary, or industrial styles, D&L Furnitech has something for everyone. Our diverse designs, dimensions, colors, and finish options make us one of India's best online furniture retailers. We understand that every home is unique, which is why we offer customization options to match your specific requirements and preferences.
             </p>
           </div>
         </div>
@@ -26,7 +26,7 @@ export default function SEOFooterContent() {
         {/* Furniture Materials Section */}
         <div className="mb-12">
           <h3 className="text-3xl font-bold text-gray-900 mb-6">
-            Premium Furniture Materials at D&L Furnitures
+            Premium Furniture Materials at D&L Furnitech
           </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -114,7 +114,7 @@ export default function SEOFooterContent() {
         {/* Why Choose D&L Section */}
         <div className="mb-12 bg-neutral-900 rounded-lg p-8">
           <h3 className="text-3xl font-bold text-white mb-6">
-            Why Choose D&L Furnitures for Your Home?
+            Why Choose D&L Furnitech for Your Home?
           </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-white">
@@ -153,13 +153,13 @@ export default function SEOFooterContent() {
         {/* Final CTA Section */}
         <div className="text-center bg-gradient-to-r from-neutral-900 to-neutral-800 rounded-lg p-8">
           <h3 className="text-2xl font-bold text-white mb-4">
-            Shop Premium Solid Wood Furniture Online at D&L Furnitures
+            Shop Premium Solid Wood Furniture Online at D&L Furnitech
           </h3>
           <p className="text-white mb-6 max-w-3xl mx-auto">
-            Experience the perfect blend of quality, design, and affordability. Browse our extensive collection of solid wood furniture online and transform your home today. From living rooms to bedrooms, dining spaces to offices, D&L Furnitures has the perfect pieces for every corner of your home. Trust us for quality furniture that lasts generations.
+            Experience the perfect blend of quality, design, and affordability. Browse our extensive collection of solid wood furniture online and transform your home today. From living rooms to bedrooms, dining spaces to offices, D&L Furnitech has the perfect pieces for every corner of your home. Trust us for quality furniture that lasts generations.
           </p>
           <p className="text-gray-300 text-sm">
-            D&L Furnitures - Crafting Beautiful Homes, One Piece at a Time
+            D&L Furnitech - Crafting Beautiful Homes, One Piece at a Time
           </p>
         </div>
       </div>

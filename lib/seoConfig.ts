@@ -1,6 +1,6 @@
 export const siteConfig = {
-  name: 'D&L Furnitures',
-  description: 'Buy Premium Solid Wood Furniture Online in India - D&L Furnitures offers handcrafted wooden furniture, sofas, beds, dining tables, and more at affordable prices with free delivery.',
+  name: 'D&L Furnitech',
+  description: 'Buy Premium Solid Wood Furniture Online in India - D&L Furnitech offers handcrafted wooden furniture, sofas, beds, dining tables, and more at affordable prices with free delivery.',
   keywords: [
     'wooden furniture online',
     'solid wood furniture',
@@ -28,7 +28,7 @@ export const schemaMarkup = {
   organization: {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'D&L Furnitures',
+    name: 'D&L Furnitech',
     url: siteConfig.siteUrl,
     logo: `${siteConfig.siteUrl}/logo.jpg`,
     description: siteConfig.description,
@@ -47,7 +47,7 @@ export const schemaMarkup = {
   localBusiness: {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    name: 'D&L Furnitures',
+    name: 'D&L Furnitech',
     image: `${siteConfig.siteUrl}/hero.png`,
     description: siteConfig.description,
     url: siteConfig.siteUrl,

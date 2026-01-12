@@ -25,7 +25,7 @@ export default function HeroBanner() {
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
         <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 drop-shadow-lg">
-          Welcome to D&L Furnitures
+          Welcome to D&L Furnitech
         </h1>
         <p className="text-sm sm:text-base md:text-xl lg:text-2xl text-gray-100 mb-6 sm:mb-8 drop-shadow-md">
           Discover Premium Solid Wood Furniture Crafted for Your Lifestyle

@@ -1,4 +1,4 @@
-# D&L Furnitures - SEO & Digital Marketing Guide
+# D&L Furnitech - SEO & Digital Marketing Guide
 
 ## ✅ Technical SEO Implementation
 

@@ -12,11 +12,11 @@ export default function AboutPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="w-full bg-gradient-to-r from-neutral-950 to-neutral-900 py-16 pt-24">
+      <section className="w-full bg-gradient-to-r from-neutral-950 to-neutral-900 py-16 pt-20">
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <h1 className="text-5xl font-bold text-yellow-500 mb-4">About D&L Furnitures</h1>
+          <h1 className="text-5xl font-bold text-yellow-500 mb-4">About D&L Furnitech</h1>
           <p className="text-lg text-neutral-300 max-w-2xl mx-auto">
-            Discover the passion and craftsmanship behind D&L Furnitures - Where tradition meets contemporary design
+            Discover the passion and craftsmanship behind D&L Furnitech - Where tradition meets contemporary design
           </p>
         </div>
       </section>
@@ -39,10 +39,10 @@ export default function AboutPage() {
             </div>
             
             <div className="max-w-2xl text-center">
-              <h3 className="text-3xl font-bold text-gray-900 mb-4">Founders of D&L Furnitures</h3>
+              <h3 className="text-3xl font-bold text-gray-900 mb-4">Founders of D&L Furnitech</h3>
               <p className="text-yellow-400 font-semibold mb-6 text-lg">Co-Founders & Visionaries</p>
               <p className="text-gray-700 leading-relaxed text-lg">
-                Our founders bring together decades of experience in furniture design, craftsmanship, and sustainable business practices. With their combined vision of blending traditional woodworking techniques with modern aesthetics, they have built D&L Furnitures into a trusted name in the industry. Their passion for quality, dedication to customer satisfaction, and commitment to excellence form the foundation of everything we do.
+                Our founders bring together decades of experience in furniture design, craftsmanship, and sustainable business practices. With their combined vision of blending traditional woodworking techniques with modern aesthetics, they have built D&L Furnitech into a trusted name in the industry. Their passion for quality, dedication to customer satisfaction, and commitment to excellence form the foundation of everything we do.
               </p>
             </div>
           </div>
@@ -56,7 +56,7 @@ export default function AboutPage() {
           
           <div className="bg-white rounded-lg shadow-lg p-8 md:p-12">
             <p className="text-gray-700 text-lg leading-relaxed mb-6">
-              D&L Furnitures was born from a simple yet powerful dream: to create furniture that not only beautifies homes but also tells a story of craftsmanship, dedication, and love for our craft. Our founders, driven by their passion for traditional woodworking, decided to bridge the gap between heritage and modernity.
+              D&L Furnitech was born from a simple yet powerful dream: to create furniture that not only beautifies homes but also tells a story of craftsmanship, dedication, and love for our craft. Our founders, driven by their passion for traditional woodworking, decided to bridge the gap between heritage and modernity.
             </p>
 
             <p className="text-gray-700 text-lg leading-relaxed mb-6">
@@ -72,7 +72,7 @@ export default function AboutPage() {
             </p>
 
             <p className="text-gray-700 text-lg leading-relaxed">
-              Today, D&L Furnitures stands as a symbol of quality, innovation, and customer-centricity. We're proud of what we've accomplished, but we're even more excited about the future. With every new design, every customer interaction, and every piece of feedback, we're evolving and growing stronger.
+              Today, D&L Furnitech stands as a symbol of quality, innovation, and customer-centricity. We're proud of what we've accomplished, but we're even more excited about the future. With every new design, every customer interaction, and every piece of feedback, we're evolving and growing stronger.
             </p>
 
             <div className="mt-8 pt-8 border-t border-gray-200">
