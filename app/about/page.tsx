@@ -6,6 +6,7 @@ import Footer from '@/components/Footer';
 import { GiToolbox, GiEarthAmerica } from 'react-icons/gi';
 import { FaHeart as FaHeartFA } from 'react-icons/fa';
 
+
 export default function AboutPage() {
   return (
     <div className="w-full">
