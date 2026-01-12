@@ -35,11 +35,17 @@ export default function Home() {
     // Price filter
     if (product.price > filters.priceRange) return false;
 
-    // Materials filter (if any selected)
+    // Category filter (using materials field for categories)
     if (filters.materials.length > 0) {
       const hasMatch = filters.materials.some(
-        (material) =>
-          product.name.toLowerCase().includes(material.toLowerCase())
+        (material) => {
+          // Check if it's a category match
+          if (material === 'sofas' && product.category === 'sofas') return true;
+          if (material === 'beds' && product.category === 'beds') return true;
+          if (material === 'dining-sets' && product.category === 'dining-sets') return true;
+          if (material === 'storage' && product.category === 'storage') return true;
+          return false;
+        }
       );
       if (!hasMatch) return false;
     }

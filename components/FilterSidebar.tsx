@@ -1,5 +1,8 @@
 'use client';
 
+import { useState } from 'react';
+import { products } from '@/lib/mockData';
+
 interface FilterState {
   priceRange: number;
   materials: string[];
@@ -15,6 +18,13 @@ interface FilterSidebarProps {
 }
 
 export default function FilterSidebar({ filters, setFilters }: FilterSidebarProps) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  // Calculate product counts by category
+  const getCategoryCount = (category: string) => {
+    return products.filter(p => p.category === category).length;
+  };
+
   const handlePriceChange = (value: number) => {
     setFilters({ ...filters, priceRange: value });
   };
@@ -54,9 +64,8 @@ export default function FilterSidebar({ filters, setFilters }: FilterSidebarProp
     setFilters({ ...filters, deliveryTime });
   };
 
-  return (
-    <aside className="hidden lg:block w-64 pr-6">
-      <div className="bg-white rounded-lg p-6 border border-gray-200 sticky top-24">
+  const FilterContent = () => (
+    <div className="bg-white rounded-lg p-6 border border-gray-200 sticky top-24">
         {/* Filters Title */}
         <h3 className="text-lg font-bold text-gray-900 mb-6">Filters</h3>
 
@@ -79,146 +88,64 @@ export default function FilterSidebar({ filters, setFilters }: FilterSidebarProp
           </div>
         </div>
 
-        {/* Material */}
+        {/* Categories */}
         <div className="mb-6 pb-6 border-b border-gray-200">
-          <h4 className="font-semibold text-gray-900 mb-4 text-sm">Material</h4>
+          <h4 className="font-semibold text-gray-900 mb-4 text-sm">Categories</h4>
           <ul className="space-y-2 text-sm">
             <li className="flex items-center gap-2">
               <input 
                 type="checkbox" 
-                id="sheesham" 
+                id="sofas" 
                 className="w-4 h-4 cursor-pointer" 
-                checked={filters.materials.includes('sheesham')}
-                onChange={() => handleMaterialChange('sheesham')}
+                checked={filters.materials.includes('sofas')}
+                onChange={() => handleMaterialChange('sofas')}
               />
-              <label htmlFor="sheesham" className="cursor-pointer text-gray-700">
-                Sheesham Wood
+              <label htmlFor="sofas" className="cursor-pointer text-gray-700">
+                Sofas
               </label>
             </li>
             <li className="flex items-center gap-2">
               <input 
                 type="checkbox" 
-                id="mango" 
+                id="beds" 
                 className="w-4 h-4 cursor-pointer" 
-                checked={filters.materials.includes('mango')}
-                onChange={() => handleMaterialChange('mango')}
+                checked={filters.materials.includes('beds')}
+                onChange={() => handleMaterialChange('beds')}
               />
-              <label htmlFor="mango" className="cursor-pointer text-gray-700">
-                Mango Wood
+              <label htmlFor="beds" className="cursor-pointer text-gray-700">
+                Beds
               </label>
             </li>
             <li className="flex items-center gap-2">
               <input 
                 type="checkbox" 
-                id="oak" 
+                id="dining" 
                 className="w-4 h-4 cursor-pointer" 
-                checked={filters.materials.includes('oak')}
-                onChange={() => handleMaterialChange('oak')}
+                checked={filters.materials.includes('dining-sets')}
+                onChange={() => handleMaterialChange('dining-sets')}
               />
-              <label htmlFor="oak" className="cursor-pointer text-gray-700">
-                Oak Wood
+              <label htmlFor="dining" className="cursor-pointer text-gray-700">
+                Dining
               </label>
             </li>
             <li className="flex items-center gap-2">
               <input 
                 type="checkbox" 
-                id="engineered" 
+                id="storage" 
                 className="w-4 h-4 cursor-pointer" 
-                checked={filters.materials.includes('engineered')}
-                onChange={() => handleMaterialChange('engineered')}
+                checked={filters.materials.includes('storage')}
+                onChange={() => handleMaterialChange('storage')}
               />
-              <label htmlFor="engineered" className="cursor-pointer text-gray-700">
-                Engineered Wood
+              <label htmlFor="storage" className="cursor-pointer text-gray-700">
+                Storage
               </label>
             </li>
           </ul>
         </div>
 
-        {/* Finish */}
-        <div className="mb-6 pb-6 border-b border-gray-200">
-          <h4 className="font-semibold text-gray-900 mb-4 text-sm">Finish</h4>
-          <ul className="space-y-2 text-sm">
-            <li className="flex items-center gap-2">
-              <input 
-                type="checkbox" 
-                id="natural" 
-                className="w-4 h-4 cursor-pointer" 
-                checked={filters.finishes.includes('natural')}
-                onChange={() => handleFinishChange('natural')}
-              />
-              <label htmlFor="natural" className="cursor-pointer text-gray-700">
-                Natural
-              </label>
-            </li>
-            <li className="flex items-center gap-2">
-              <input 
-                type="checkbox" 
-                id="stained" 
-                className="w-4 h-4 cursor-pointer" 
-                checked={filters.finishes.includes('stained')}
-                onChange={() => handleFinishChange('stained')}
-              />
-              <label htmlFor="stained" className="cursor-pointer text-gray-700">
-                Stained
-              </label>
-            </li>
-            <li className="flex items-center gap-2">
-              <input 
-                type="checkbox" 
-                id="polished" 
-                className="w-4 h-4 cursor-pointer" 
-                checked={filters.finishes.includes('polished')}
-                onChange={() => handleFinishChange('polished')}
-              />
-              <label htmlFor="polished" className="cursor-pointer text-gray-700">
-                Polished
-              </label>
-            </li>
-          </ul>
-        </div>
 
-        {/* Seating Capacity */}
-        <div className="mb-6 pb-6 border-b border-gray-200">
-          <h4 className="font-semibold text-gray-900 mb-4 text-sm">Seating Capacity</h4>
-          <ul className="space-y-2 text-sm">
-            <li className="flex items-center gap-2">
-              <input 
-                type="checkbox" 
-                id="2seater" 
-                className="w-4 h-4 cursor-pointer" 
-                checked={filters.seatingCapacity.includes('2seater')}
-                onChange={() => handleSeatingChange('2seater')}
-              />
-              <label htmlFor="2seater" className="cursor-pointer text-gray-700">
-                2 Seater
-              </label>
-            </li>
-            <li className="flex items-center gap-2">
-              <input 
-                type="checkbox" 
-                id="3seater" 
-                className="w-4 h-4 cursor-pointer" 
-                checked={filters.seatingCapacity.includes('3seater')}
-                onChange={() => handleSeatingChange('3seater')}
-              />
-              <label htmlFor="3seater" className="cursor-pointer text-gray-700">
-                3 Seater
-              </label>
-            </li>
-            <li className="flex items-center gap-2">
-              <input 
-                type="checkbox" 
-                id="4plus" 
-                className="w-4 h-4 cursor-pointer" 
-                checked={filters.seatingCapacity.includes('4plus')}
-                onChange={() => handleSeatingChange('4plus')}
-              />
-              <label htmlFor="4plus" className="cursor-pointer text-gray-700">
-                4+ Seater
-              </label>
-            </li>
-          </ul>
-        </div>
+
+
 
         {/* Availability */}
         <div className="mb-6 pb-6 border-b border-gray-200">
@@ -251,49 +178,60 @@ export default function FilterSidebar({ filters, setFilters }: FilterSidebarProp
           </ul>
         </div>
 
-        {/* Delivery Time */}
-        <div>
-          <h4 className="font-semibold text-gray-900 mb-4 text-sm">Delivery Time</h4>
-          <ul className="space-y-2 text-sm">
-            <li className="flex items-center gap-2">
-              <input 
-                type="checkbox" 
-                id="express" 
-                className="w-4 h-4 cursor-pointer" 
-                checked={filters.deliveryTime.includes('express')}
-                onChange={() => handleDeliveryChange('express')}
-              />
-              <label htmlFor="express" className="cursor-pointer text-gray-700">
-                Express (2-3 days)
-              </label>
-            </li>
-            <li className="flex items-center gap-2">
-              <input 
-                type="checkbox" 
-                id="standard" 
-                className="w-4 h-4 cursor-pointer" 
-                checked={filters.deliveryTime.includes('standard')}
-                onChange={() => handleDeliveryChange('standard')}
-              />
-              <label htmlFor="standard" className="cursor-pointer text-gray-700">
-                Standard (5-7 days)
-              </label>
-            </li>
-            <li className="flex items-center gap-2">
-              <input 
-                type="checkbox" 
-                id="custom" 
-                className="w-4 h-4 cursor-pointer" 
-                checked={filters.deliveryTime.includes('custom')}
-                onChange={() => handleDeliveryChange('custom')}
-              />
-              <label htmlFor="custom" className="cursor-pointer text-gray-700">
-                Custom (Up to 30 days)
-              </label>
-            </li>
-          </ul>
+
+    </div>
+  );
+
+  return (
+    <>
+      {/* Mobile Filter Funnel Icon Button */}
+      <button
+        onClick={() => setIsOpen(true)}
+        className="lg:hidden fixed bottom-20 right-4 z-40 p-3 bg-yellow-600 text-white rounded-full hover:bg-yellow-700 transition shadow-lg"
+        title="Open Filters"
+      >
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
+        </svg>
+      </button>
+
+      {/* Mobile Filter Modal/Sidebar */}
+      {isOpen && (
+        <div className="fixed inset-0 z-50 lg:hidden">
+          {/* Backdrop */}
+          <div 
+            className="absolute inset-0 bg-black/50" 
+            onClick={() => setIsOpen(false)}
+          />
+          
+          {/* Sidebar */}
+          <div className="absolute right-0 top-0 bottom-0 w-80 bg-white shadow-2xl overflow-y-auto">
+            {/* Header */}
+            <div className="flex items-center justify-between p-6 border-b border-gray-200 sticky top-0 bg-white">
+              <h3 className="text-lg font-bold text-gray-900">Filters</h3>
+              <button
+                onClick={() => setIsOpen(false)}
+                className="p-2 bg-yellow-600 text-white hover:bg-yellow-700 rounded-lg transition"
+                title="Close Filters"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+
+            {/* Filter Content */}
+            <div className="p-6">
+              <FilterContent />
+            </div>
+          </div>
         </div>
-      </div>
-    </aside>
+      )}
+
+      {/* Desktop Filters */}
+      <aside className="hidden lg:block w-64 pr-6">
+        <FilterContent />
+      </aside>
+    </>
   );
 }
